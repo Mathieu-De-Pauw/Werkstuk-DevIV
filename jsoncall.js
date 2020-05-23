@@ -12,7 +12,7 @@ $(document).ready(function(){
     }).fail(function(err1,err2){
         console.log(err1,err2);
     }).always(function(){
-        console.log("end");
+        console.log("en");
     })
 
       
