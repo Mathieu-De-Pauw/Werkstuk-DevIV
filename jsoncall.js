@@ -37,7 +37,10 @@ $(document).ready(function(){
         const text = $(this).text();
         const text2 = text.toLowerCase();
         console.log(text2,optreden);
-        zoekDoelgroep(text2);
+        let text3 = zoekDoelgroep(text2);
+        for(let i = 0; i < inputArray.length; i++){
+            maakLayout(text3[i])
+        }
     })    
 
        //Kies Genre
@@ -45,31 +48,47 @@ $(document).ready(function(){
         $("#insert").empty();
         const text = $(this).text();
         const text2 = text.toLowerCase();
-        selecteerGenre(text2);
+        let text3 = selecteerGenre(text2);
+        for(let i = 0; i < inputArray2.length; i++){
+            maakLayout(text3[i])
+        }
     }) 
 
+    let inputArray = [];
     // Selecteer data voor gekozen filter
     function zoekDoelgroep(data){
-        for(let i = 0 ; i < optreden.length ; i++){
+        for(let i = 0; i < optreden.length ; i++){
             //console.log(optreden[i]);
             if(data == optreden[i].category){
-            maakLayout(optreden[i]);
+            if(inputArray.includes(optreden[i])){
+                console.log("al zichtbaar");
+            } else {
+            inputArray.push(optreden[i]);
+            //maakLayout(optreden[i]);
+            }
             } else {
             //console.log("neen");
             }
         }
+        return inputArray;
     }
-
+    let inputArray2 = [];
     //Selecteer data voor genre 
     function selecteerGenre(data){
         for(let i = 0 ; i < optreden.length ; i++){
             //console.log(optreden[i]);
             if(data == optreden[i]['genre-v2']){
-            maakLayout(optreden[i]);
+                if(inputArray2.includes(optreden[i])){
+                    console.log("al zichtbaar");
+                } else {
+                inputArray2.push(optreden[i]);
+                //maakLayout(optreden[i]);
+                }
             } else {
             //console.log("neen");
             }
         }
+        return inputArray2;
     }
 
       // Print geselecteerde filter

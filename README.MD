@@ -14,3 +14,13 @@ Spijtig genoeg is het mij niet gelukt om verschillende genres aan te duiden en t
 Ik had de toggle functie gebuikt voor dit porbleem proberen op te lossen maar dat is spijtig genoeg niet gelukt.
 
 Mijn oprechte excuses voor het onderdoende design, Front-end is spijtig genoeg niet mijn beste kwaliteit..
+
+
+UPDATE 
+
+Bij het nogmaals proberen verder werken is het gelukt om meerdere genres aan te klikken en te laten zien. 
+Nu onstaat het probleem dat ik ze niet meer kan wegklikken. Heb nogmaals met toggle en for loops proberen werken maar krijg steeds niet het gewenste resultaat. 
+Moest alles duidelijk zijn en u ziet niet in wat u nog aan mij zou moeten vragen, zou u toch niet eventueel even willen bellen want ik heb het gevoel dat ik heel dicht bij zat en wil graag weten hoe ik het gewenste resultaat zou kunnen behalen. 
+Dit is natuurlijk vrijblijvend en enkel toepasbaar als u tijd overheeft.
+
+Bedankt
