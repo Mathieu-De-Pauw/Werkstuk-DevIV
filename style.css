@@ -1,10 +1,13 @@
 ul
 {
     list-style-type: none;
+   
 }
 li
 {
     display: inline;
+    color: white;
+    
 }
 .navbar
 {
@@ -39,4 +42,20 @@ button{
 .filterDiv{
     background-color: grey;
     margin: 1%;
+    color: white;
+    float: left;
+    width: 25%;
+    height: 450px;
+    padding: 2%;
+    
+}
+
+.videos{
+    overflow: hidden;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
