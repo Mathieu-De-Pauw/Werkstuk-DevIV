@@ -40,9 +40,9 @@ button{
 }
 
 .filterDiv{
-    background-color: grey;
+    background-color: lightgrey;
     margin: 1%;
-    color: white;
+    color: rgb(63, 57, 57);
     float: left;
     width: 25%;
     height: 450px;

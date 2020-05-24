@@ -26,7 +26,7 @@ $(document).ready(function(){
             for(let g in stuk){
                 let naam = stuk[g];
                 optreden.push(naam);
-                $("#insert").append(`<div class="filterDiv"><div class="imgContainer"><img src="${naam.thumbnail.url}" alt="${naam.slug}"></div><h2>${naam.name}</h2><h3 class="genreTitle">${naam["genre-v2"]}</h3><h3 class="leeftijdTitle">${naam.age}</h3><p>${naam.excerpt}</p><p>${naam["recorded-at"]}</p><h4>${naam["video-length"]}</h4></div>`);
+                $("#insert").append(`<div class="filterDiv"><div class="imgContainer"><img src="${naam.thumbnail.url}" alt="${naam.slug}"></div><h2>${naam.name}</h2><h3 class="genreTitle">${naam["genre-v2"]}</h3><p>${naam.excerpt}</p><p>${naam["recorded-at"]}</p><h4>${naam["video-length"]}</h4></div>`);
             }
         }
     }
@@ -74,8 +74,7 @@ $(document).ready(function(){
 
       // Print geselecteerde filter
       function maakLayout(data){
-       // $("#insert").append('<div class="filterDiv '+data.category+'">' + '<img src='+ data.thumbnail.url +' alt='+data.slug+'>' +'<br>' + data.name + "<br>" + data.excerpt +"<br>" + data.category + "<br>" + data['genre-v2']+ "<br>"+ data["video-length"] +" <br> </div>");
-        $("#insert").append(`<div class="filterDiv"><div class="imgContainer"><img src="${data.thumbnail.url}" alt="${data.slug}"></div><h2>${data.name}</h2><h3 class="genreTitle">${data["genre-v2"]}</h3><h3 class="leeftijdTitle">${data.age}</h3><p>${data.excerpt}</p><p>${data["recorded-at"]}</p><h4>${data["video-length"]}</h4></div>`)
+        $("#insert").append(`<div class="filterDiv"><div class="imgContainer"><img src="${data.thumbnail.url}" alt="${data.slug}"></div><h2>${data.name}</h2><h3 class="genreTitle">${data["genre-v2"]}</h3><p>${data.excerpt}</p><p>${data["recorded-at"]}</p><h4>${data["video-length"]}</h4></div>`)
 }
 
 });
