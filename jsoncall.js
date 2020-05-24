@@ -1,6 +1,7 @@
+"use strict"
 $(document).ready(function(){
     //console.log("script linked");
-    const optreden =[];
+    let optreden =[];
 
     $.ajax({
         type: 'GET',
@@ -18,42 +19,61 @@ $(document).ready(function(){
     // Verzamel alle data uit json file en steek deze in een array  
     function printData(data){
         $("#insert").empty();
-        var g = 0;
-        for(var i in data){
-            var stuk = data[i];  
-            //console.log(stuk);
-            for(var g in stuk){
-                var naam = stuk[g];
+        let g = 0;
+        for(let i in data){
+            let stuk = data[i];  
+            console.log(stuk);
+            for(let g in stuk){
+                let naam = stuk[g];
                 optreden.push(naam);
                 $("#insert").append('<div class="filterDiv '+naam.category+'"> <br>' + naam.name + "<br>" + naam.excerpt +"<br>" + naam.category + "<br>" + naam['genre-v2']+ "<br>"+ naam["video-length"] +" <br> </div>");
             }
         }
     }
 
-    // Kies filter
+    // Kies Doelgroep
     $(".btn-doelgroep").click(function(){
+        $("#insert").empty();
         const text = $(this).text();
-        console.log(text,optreden);
-        zoekDoelgroep(text,optreden);
+        const text2 = text.toLowerCase();
+        console.log(text2,optreden);
+        zoekDoelgroep(text2);
     })    
 
-    // Selecteer data voor gekozen filter
-    function zoekDoelgroep(data,optreden){
-        //console.log(optreden.length);
+       //Kies Genre
+       $(".btn-genre").click(function(){
         $("#insert").empty();
+        const text = $(this).text();
+        const text2 = text.toLowerCase();
+        selecteerGenre(text2);
+    }) 
+
+    // Selecteer data voor gekozen filter
+    function zoekDoelgroep(data){
         for(let i = 0 ; i < optreden.length ; i++){
             //console.log(optreden[i]);
             if(data == optreden[i].category){
-            console.log("ja");
             maakLayout(optreden[i]);
             } else {
-            console.log("neen");
+            //console.log("neen");
             }
         }
     }
 
-    // Print geselecteerde filter
-    function maakLayout(data){
+    //Selecteer data voor genre 
+    function selecteerGenre(data){
+        for(let i = 0 ; i < optreden.length ; i++){
+            //console.log(optreden[i]);
+            if(data == optreden[i]['genre-v2']){
+            maakLayout(optreden[i]);
+            } else {
+            //console.log("neen");
+            }
+        }
+    }
+
+      // Print geselecteerde filter
+      function maakLayout(data){
         $("#insert").append('<div class="filterDiv '+data.category+'"> <br>' + data.name + "<br>" + data.excerpt +"<br>" + data.category + "<br>" + data['genre-v2']+ "<br>"+ data["video-length"] +" <br> </div>");
     }
 });
